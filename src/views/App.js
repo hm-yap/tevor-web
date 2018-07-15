@@ -15,9 +15,11 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import {
+  MenuIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon
+} from './common/MaterialIcons'
 import List from '@material-ui/core/List'
 
 import {
@@ -127,7 +129,7 @@ class App extends React.Component {
                 <MenuIcon />
               </IconButton>
               <Typography variant="title" color="inherit" noWrap>
-                Tevor AVA
+                Tevor Mobile PLT
             </Typography>
             </Toolbar>
           </AppBar>

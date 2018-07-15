@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
-import ReportProblemIcon from '@material-ui/icons/ReportProblem'
+import { ReportProblemIcon } from '../common/MaterialIcons'
 
 const styles = theme => ({
   root: {

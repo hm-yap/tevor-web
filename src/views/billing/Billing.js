@@ -5,19 +5,19 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Avatar from '@material-ui/core/Avatar'
 import Typography from '@material-ui/core/Typography'
-import ReportProblemIcon from '@material-ui/icons/ReportProblem'
+import { ReportProblemIcon } from '../common/MaterialIcons'
 
 const styles = theme => ({
   root: {
     overflow: 'hidden',
-    padding: `0 ${theme.spacing.unit}px`,
+    padding: `0 ${theme.spacing.unit}px`
   },
   wrapper: {
-    maxWidth: 600,
+    maxWidth: 600
   },
   paper: {
     margin: theme.spacing.unit,
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing.unit * 2
   },
   orangeAvatar: {
     backgroundColor: 'orange'
@@ -39,8 +39,8 @@ const Billing = (props) => {
             </Grid>
             <Grid item xs>
               <Typography variant='headline' component='h4'>
-              Billing. Work in Progress...
-        </Typography>
+                Billing. Work in Progress...
+              </Typography>
             </Grid>
           </Grid>
         </Paper>
@@ -50,7 +50,7 @@ const Billing = (props) => {
 }
 
 Billing.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Billing)

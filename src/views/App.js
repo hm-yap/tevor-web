@@ -6,8 +6,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-
-
+// Material core
 import { withStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
 import AppBar from '@material-ui/core/AppBar'
@@ -15,13 +14,14 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import IconButton from '@material-ui/core/IconButton'
+import List from '@material-ui/core/List'
+// Material icons
 import {
   MenuIcon,
   ChevronLeftIcon,
   ChevronRightIcon
 } from './common/MaterialIcons'
-import List from '@material-ui/core/List'
-
+// Components
 import {
   staffMenuItems,
   adminMenuItems
@@ -29,6 +29,7 @@ import {
 import Dashboard from './dashboard/Dashboard'
 import Billing from './billing/Billing'
 import Job from './job/Job'
+import JobNew from './job/JobNew'
 
 const drawerWidth = 240
 
@@ -155,6 +156,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path='/' component={Dashboard} />
               <Route exact path='/job' component={Job} />
+              <Route exact path='/job/new' component={JobNew} />
               <Route exact path='/billing' component={Billing} />
             </Switch>
           </main>

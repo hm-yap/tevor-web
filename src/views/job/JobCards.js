@@ -7,7 +7,6 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 // Material icons
-//import InfoIcon from '@material-ui/icons/Work'
 import {
   MyLocationIcon,
   ErrorOutlineIcon,
@@ -20,26 +19,46 @@ const styles = theme => ({
   },
   iconDiv: {
     borderRadius: "3px",
-    backgroundColor: "#999",
     padding: "15px",
     marginRight: "15px",
-    float: "left",
+    marginTop: "4px",
+    float: "left"
   },
   icon: {
     color: "white",
     fontSize: 36
   },
+  infoBackground: {
+    background: "#04B431"
+  },
   infoGradient: {
     background: "linear-gradient(60deg,  #01DF3A, #04B431)"
   },
+  attnBackground: {
+    background: "#FF8000"
+  },
   attnGradient: {
-    background: "linear-gradient(60deg,  #FE9A2E, #FF8000)"
+    background: "linear-gradient(60deg,  #FACC2E, #FF8000)"
+  },
+  urgentBackground: {
+    background: "#B41717"
   },
   urgentGradient: {
-    background: "linear-gradient(60deg,  #D31919, #B41717)"
+    background: "linear-gradient(60deg,  #FE642E, #B41717)"
+  },
+  targetBackground: {
+    background: "#0080FF"
   },
   targetGradient: {
-    background: "linear-gradient(60deg,  #2E9AFE, #0080FF)"
+    background: "linear-gradient(60deg,  #58ACFA, #0080FF)"
+  },
+  cardTitle: {
+    fontSize: "18px",
+    color: 'white'
+  },
+  cardContent: {
+    fontSize: "32px",
+    color: 'white'
   }
 })
 
@@ -51,45 +70,45 @@ const JobCards = props => {
       <Grid container justify='center' spacing={16}>
         <Grid item xs={12} sm={6} md={3}>
           <Card>
-            <CardContent>
-              <div className={`${classes.iconDiv} ${classes.infoGradient}`}>
-                <WorkOutlineIcon style={{ color: 'white', fontSize: '36px' }} />
+            <CardContent className={classes.infoGradient}>
+              <div className={`${classes.iconDiv} ${classes.infoBackground}`}>
+                <WorkOutlineIcon className={classes.icon} />
               </div>
-              <Typography variant='body1' align='right'>JOB</Typography>
-              <Typography variant='headline' align='right'>13</Typography>
+              <Typography className={classes.cardTitle} align='right'>JOB</Typography>
+              <Typography className={classes.cardContent} align='right'>13</Typography>
             </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Card>
-            <CardContent>
-              <div className={`${classes.iconDiv} ${classes.attnGradient}`}>
+            <CardContent className={classes.attnGradient}>
+              <div className={`${classes.iconDiv} ${classes.attnBackground}`}>
                 <ErrorOutlineIcon className={classes.icon} />
               </div>
-              <Typography variant='body1' align='right'>ATTENTION</Typography>
-              <Typography variant='headline' align='right'>3</Typography>
+              <Typography className={classes.cardTitle} align='right'>ATTENTION</Typography>
+              <Typography className={classes.cardContent} align='right'>3</Typography>
             </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Card>
-            <CardContent>
-              <div className={`${classes.iconDiv} ${classes.urgentGradient}`}>
+            <CardContent className={classes.urgentGradient}>
+              <div className={`${classes.iconDiv} ${classes.urgentBackground}`}>
                 <ErrorOutlineIcon className={classes.icon} />
               </div>
-              <Typography variant='body1' align='right'>URGENT</Typography>
-              <Typography variant='headline' align='right'>8</Typography>
+              <Typography className={classes.cardTitle} align='right'>URGENT</Typography>
+              <Typography className={classes.cardContent} align='right'>8</Typography>
             </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <Card>
-            <CardContent>
-              <div className={`${classes.iconDiv} ${classes.targetGradient}`}>
+            <CardContent className={classes.targetGradient}>
+              <div className={`${classes.iconDiv} ${classes.targetBackground}`}>
                 <MyLocationIcon className={classes.icon} />
               </div>
-              <Typography variant='body1' align='right'>TARGET</Typography>
-              <Typography variant='headline' align='right'>43 / 100</Typography>
+              <Typography className={classes.cardTitle} align='right'>MONTHLY TARGET</Typography>
+              <Typography className={classes.cardContent} align='right'>43 / 100</Typography>
             </CardContent>
           </Card>
         </Grid>

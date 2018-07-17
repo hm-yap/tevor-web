@@ -40,7 +40,7 @@ const styles = theme => ({
 })
 
 const Job = (props) => {
-  const { classes } = props
+  const { classes, ...other } = props
 
   return (
     <div className={classes.root}>
@@ -69,7 +69,7 @@ const Job = (props) => {
               </Button>
             } />
           <CardContent>
-            <JobListing />
+            <JobListing {...other} />
           </CardContent>
         </Card>
       </div>

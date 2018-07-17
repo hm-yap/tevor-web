@@ -13,7 +13,7 @@ const styles = theme => {
 }
 
 const JobListing = (props) => {
-  const { classes } = props
+  const { classes, history } = props
   const emptyRows = 7
 
   const data = [
@@ -64,7 +64,7 @@ const JobListing = (props) => {
           {
             data.map(job => {
               return (
-                <TableRow key={job.id}>
+                <TableRow hover key={job.id} onClick={() => history.push(`/job/${job.id}`)}>
                   <TableCell>{job.id}</TableCell>
                   <TableCell numeric>{job.client}</TableCell>
                   <TableCell numeric>{job.imei}</TableCell>

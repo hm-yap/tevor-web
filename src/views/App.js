@@ -1,11 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import {
-  BrowserRouter,
-  Switch,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 // Material core
 import { withStyles } from '@material-ui/core/styles'
 import Drawer from '@material-ui/core/Drawer'
@@ -26,10 +22,8 @@ import {
   staffMenuItems,
   adminMenuItems
 } from './common/SideMenuItem'
-import Dashboard from './dashboard/Dashboard'
-import Billing from './billing/Billing'
-import Job from './job/Job'
-import JobNew from './job/JobNew'
+// Application Routes
+import AppRoutes from '../routes'
 
 const drawerWidth = 240
 
@@ -153,12 +147,7 @@ class App extends React.Component {
           </Drawer>
           <main className={classes.content}>
             <div className={classes.toolbar} />
-            <Switch>
-              <Route exact path='/' component={Dashboard} />
-              <Route exact path='/job' component={Job} />
-              <Route exact path='/job/new' component={JobNew} />
-              <Route exact path='/billing' component={Billing} />
-            </Switch>
+            <AppRoutes />
           </main>
         </div>
       </BrowserRouter>

@@ -18,46 +18,46 @@ const styles = theme => ({
     padding: theme.spacing.unit
   },
   iconDiv: {
-    borderRadius: "3px",
-    padding: "15px",
-    marginRight: "15px",
-    marginTop: "4px",
-    float: "left"
+    borderRadius: '3px',
+    padding: '15px',
+    marginRight: '15px',
+    marginTop: '4px',
+    float: 'left'
   },
   icon: {
-    color: "white",
+    color: 'white',
     fontSize: 36
   },
   infoBackground: {
-    background: "#04B431"
+    background: '#04B431'
   },
   infoGradient: {
-    background: "linear-gradient(60deg,  #01DF3A, #04B431)"
+    background: 'linear-gradient(60deg,  #01DF3A, #04B431)'
   },
   attnBackground: {
-    background: "#FF8000"
+    background: '#FF8000'
   },
   attnGradient: {
-    background: "linear-gradient(60deg,  #FACC2E, #FF8000)"
+    background: 'linear-gradient(60deg,  #FACC2E, #FF8000)'
   },
   urgentBackground: {
-    background: "#B41717"
+    background: '#B41717'
   },
   urgentGradient: {
-    background: "linear-gradient(60deg,  #FE642E, #B41717)"
+    background: 'linear-gradient(60deg,  #FE642E, #B41717)'
   },
   targetBackground: {
-    background: "#0080FF"
+    background: '#0080FF'
   },
   targetGradient: {
-    background: "linear-gradient(60deg,  #58ACFA, #0080FF)"
+    background: 'linear-gradient(60deg,  #58ACFA, #0080FF)'
   },
   cardTitle: {
-    fontSize: "18px",
+    fontSize: '18px',
     color: 'white'
   },
   cardContent: {
-    fontSize: "32px",
+    fontSize: '32px',
     color: 'white'
   }
 })
@@ -118,7 +118,7 @@ const JobCards = props => {
 }
 
 JobCards.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(JobCards)

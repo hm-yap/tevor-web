@@ -9,9 +9,10 @@ import TextField from '@material-ui/core/TextField'
 const JobCards = props => {
   return (
     <Grid container>
-      <Grid item>
+      <Grid item xs={3}>
         <TextField
           disabled
+          fullWidth
           value='123'
           label='Test' />
       </Grid>

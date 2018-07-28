@@ -47,6 +47,9 @@ const JobDetail = (props) => {
                 <Typography variant='title'>STATUS FIXING</Typography>
               </Grid>
               <Grid item xs={12}>
+                <Typography variant='subheading'>CUSTOMER DIRECTD</Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <Typography variant='subheading'>ASSIGNED XIAN</Typography>
               </Grid>
               <Grid item xs={12}>

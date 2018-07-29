@@ -4,15 +4,28 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 // Material core
 import { withStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import CardContent from '@material-ui/core/CardContent'
-import Button from '@material-ui/core/Button'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 
 const JobProblemList = (props) => {
+  const problemStub = ['LCD Crack', 'Cannot start', 'Veeeerrrrrrrrry Loooooooong Problem']
+
   return (
     <div>
-      PHONE PROBLEMS ...
+      <List>
+        {
+          problemStub.map((prob, index) => (
+            <ListItem key={prob}>
+              <ListItemText primary={`${index + 1}. ${prob}`} />
+              <ListItemSecondaryAction>
+                DELETE
+              </ListItemSecondaryAction>
+            </ListItem>
+          ))
+        }
+      </List>
     </div >
   )
 }

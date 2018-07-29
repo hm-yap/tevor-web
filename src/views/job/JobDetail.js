@@ -47,6 +47,9 @@ const JobDetail = (props) => {
                 <Typography variant='title'>STATUS FIXING</Typography>
               </Grid>
               <Grid item xs={12}>
+                <Typography variant='subheading'>PRIORITY HIGH</Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <Typography variant='subheading'>CUSTOMER DIRECTD</Typography>
               </Grid>
               <Grid item xs={12}>
@@ -54,6 +57,9 @@ const JobDetail = (props) => {
               </Grid>
               <Grid item xs={12}>
                 <Typography variant='subheading'>LAST UPDATE {dateStr}</Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Button variant='contained'>ASSIGN</Button>
               </Grid>
               <Grid item xs={12}>
                 <Button variant='contained'>START</Button>
@@ -64,11 +70,14 @@ const JobDetail = (props) => {
               <Grid item xs={12}>
                 <Button color='primary' variant='contained'>FINISH</Button>
               </Grid>
+              <Grid item xs={12}>
+                <Button color='primary' variant='contained'>APPROVE</Button>
+              </Grid>
             </Grid>
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={4}>
         <Card>
           <CardHeader
             title='PHONE PROBLEMS'
@@ -86,7 +95,7 @@ const JobDetail = (props) => {
           </CardContent>
         </Card>
       </Grid>
-      <Grid item xs={6}>
+      <Grid item xs={8}>
         <Card>
           <CardHeader
             title='PARTS'

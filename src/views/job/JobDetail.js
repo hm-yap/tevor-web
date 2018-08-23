@@ -9,36 +9,40 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
-import Typography from '@material-ui/core/Typography'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
 // Components
 import JobInputs from './JobInputs'
 import JobProblemList from './JobProblemList'
 import JobPartsList from './JobPartsList'
+import JobStatus from './JobStatus'
+// Material icons
+import {
+  AddIcon,
+  EditIcon
+} from '../common/MaterialIcons'
 
-const styles = () => ({
+const styles = theme => ({
   top: {
-    minHeight: 320
+    minHeight: 380
   },
   bottom: {
-    minHeight: 410
+    minHeight: 400
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit
+  },
+  cardHeader: {
+    padding: '16px 16px'
+  },
+  whiteFont: {
+  },
+  action: {
+    marginTop: -4,
+    marginRight: -4
   }
 })
 
 const JobDetail = (props) => {
   const { match: { params: { jobid } }, classes } = props
-  const dateNow = new Date()
-  const dateOptions = {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    second: 'numeric',
-    hour12: true
-  }
-  const dateTimeStr = dateNow.toLocaleString('en-GB', dateOptions).toUpperCase()
 
   return (
     <Grid container spacing={16}>
@@ -48,12 +52,18 @@ const JobDetail = (props) => {
             <Card raised className={classes.top}>
               <CardHeader
                 title={jobid}
+                classes={{
+                  root: classes.cardHeader,
+                  title: classes.whiteFont,
+                  action: classes.action
+                }}
                 action={
                   <Button
                     component={Link}
-                    to={`/job/{jobid}/edit`}
                     variant='contained'
+                    to={`/job/{jobid}/edit`}
                     color='primary'>
+                    <EditIcon className={classes.leftIcon} />
                     EDIT JOB
                   </Button>
                 } />
@@ -65,64 +75,7 @@ const JobDetail = (props) => {
           <Grid item xs={4}>
             <Card raised className={classes.top}>
               <CardContent>
-                <List>
-                  <ListItem dense disableGutters>
-                    <Grid container>
-                      <Grid item xs={4}>
-                        <Typography variant='title'>STATUS</Typography>
-                      </Grid>
-                      <Grid item xs={8}>
-                        <Typography align='right' variant='title'>FIXING</Typography>
-                      </Grid>
-                    </Grid>
-                  </ListItem>
-                  <ListItem dense disableGutters>
-                    <Grid container spacing={8}>
-                      <Grid item xs={4}>
-                        <Typography variant='subheading'>PRIORITY</Typography>
-                      </Grid>
-                      <Grid item xs={8}>
-                        <Typography align='right' variant='subheading'>
-                          <strong>HIGH</strong>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={4}>
-                        <Typography variant='subheading'>CUSTOMER</Typography>
-                      </Grid>
-                      <Grid item xs={8}>
-                        <Typography align='right' variant='subheading'>
-                          <strong>DIRECTD</strong>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={4}>
-                        <Typography variant='subheading'>ASSIGNEE</Typography>
-                      </Grid>
-                      <Grid item xs={8}>
-                        <Typography align='right' variant='subheading'>
-                          <strong>XIAN</strong>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={4}>
-                        <Typography variant='subheading'>DATE IN</Typography>
-                      </Grid>
-                      <Grid item xs={8}>
-                        <Typography align='right' variant='subheading'>{dateTimeStr}</Typography>
-                      </Grid>
-                      <Grid item xs={4}>
-                        <Typography variant='subheading'>DATE OUT</Typography>
-                      </Grid>
-                      <Grid item xs={8}>
-                        <Typography align='right' variant='subheading'>{dateTimeStr}</Typography>
-                      </Grid>
-                      <Grid item xs={4}>
-                        <Typography variant='subheading'>LAST UPDATE</Typography>
-                      </Grid>
-                      <Grid item xs={8}>
-                        <Typography align='right' variant='subheading'>{dateTimeStr}</Typography>
-                      </Grid>
-                    </Grid>
-                  </ListItem>
-                </List>
+                <JobStatus />
               </CardContent>
             </Card>
           </Grid>
@@ -134,12 +87,18 @@ const JobDetail = (props) => {
             <Card raised className={classes.bottom}>
               <CardHeader
                 title='PHONE PROBLEMS'
+                classes={{
+                  root: classes.cardHeader,
+                  title: classes.whiteFont,
+                  action: classes.action
+                }}
                 action={
                   <Button
                     component={Link}
                     to={`/job/{jobid}/edit`}
                     variant='contained'
                     color='primary'>
+                    <AddIcon className={classes.leftIcon} />
                     ADD
                   </Button>
                 } />
@@ -152,12 +111,18 @@ const JobDetail = (props) => {
             <Card raised className={classes.bottom}>
               <CardHeader
                 title='PARTS'
+                classes={{
+                  root: classes.cardHeader,
+                  title: classes.whiteFont,
+                  action: classes.action
+                }}
                 action={
                   <Button
                     component={Link}
                     to={`/job/{jobid}/edit`}
                     variant='contained'
                     color='primary'>
+                    <AddIcon className={classes.leftIcon} />
                     ADD PARTS
                   </Button>
                 } />

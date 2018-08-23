@@ -25,18 +25,21 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit * 2
   },
   cardHeader: {
-    padding: '8px 12px',
+    padding: '8 12',
     background: '#AC58FA'
   },
   whiteFont: {
     color: 'white'
   },
   action: {
-    padding: '4px 8px'
+    padding: '4 8'
   },
   button: {
-    marginTop: '8px',
-    marginRight: '8px'
+    marginTop: theme.spacing.unit,
+    marginRight: theme.spacing.unit
+  },
+  leftIcon: {
+    marginRight: theme.spacing.unit
   }
 })
 
@@ -65,8 +68,8 @@ const Job = (props) => {
                 className={classes.button}
                 variant='contained'
                 color='primary'>
-                ADD NEW JOB
-                <AddIcon />
+                <AddIcon className={classes.leftIcon} />
+                NEW JOB
               </Button>
             } />
           <CardContent>

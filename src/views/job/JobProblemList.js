@@ -8,6 +8,7 @@ import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 import IconButton from '@material-ui/core/IconButton'
 // Material icons
 import {
+  EditIcon,
   DeleteIcon
 } from '../common/MaterialIcons'
 
@@ -22,6 +23,9 @@ const JobProblemList = (props) => {
             <ListItem divider key={prob}>
               <ListItemText primary={prob.toUpperCase()} />
               <ListItemSecondaryAction>
+                <IconButton>
+                  <EditIcon />
+                </IconButton>
                 <IconButton>
                   <DeleteIcon />
                 </IconButton>

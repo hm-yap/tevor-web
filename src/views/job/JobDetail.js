@@ -56,27 +56,18 @@ const JobDetail = (props) => {
                 <Typography variant='subheading'>ASSIGNED XIAN</Typography>
               </Grid>
               <Grid item xs={12}>
+                <Typography variant='subheading'>DATE IN {dateStr}</Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Typography variant='subheading'>DATE OUT {dateStr}</Typography>
+              </Grid>
+              <Grid item xs={12}>
                 <Typography variant='subheading'>LAST UPDATE {dateStr}</Typography>
-              </Grid>
-              <Grid item xs={12}>
-                <Button variant='contained'>ASSIGN</Button>
-              </Grid>
-              <Grid item xs={12}>
-                <Button variant='contained'>START</Button>
-              </Grid>
-              <Grid item xs={12}>
-                <Button color='secondary' variant='contained'>CANCEL</Button>
-              </Grid>
-              <Grid item xs={12}>
-                <Button color='primary' variant='contained'>FINISH</Button>
-              </Grid>
-              <Grid item xs={12}>
-                <Button color='primary' variant='contained'>APPROVE</Button>
               </Grid>
             </Grid>
           </CardContent>
         </Card>
-      </Grid>
+      </Grid>      
       <Grid item xs={4}>
         <Card>
           <CardHeader

@@ -14,7 +14,7 @@ const styles = theme => {
 
 const JobListing = (props) => {
   const { classes, history } = props
-  const emptyRows = 7
+  const emptyRows = 4
 
   const data = [
     {

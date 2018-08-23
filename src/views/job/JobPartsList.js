@@ -1,14 +1,16 @@
 // Job read only container
 import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 // Material core
-import { withStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
+import IconButton from '@material-ui/core/IconButton'
+// Material icons
+import {
+  DeleteIcon
+} from '../common/MaterialIcons'
 
 const JobPartsList = (props) => {
   const tableStub = [
@@ -23,6 +25,18 @@ const JobPartsList = (props) => {
       stockDesc: 'NAME OF THE PARTS',
       status: 'WAITING FOR DELIVERY',
       quantity: 2
+    },
+    {
+      shortname: 'EXJKLJKL',
+      stockDesc: 'NAME OF THE PARTS',
+      status: 'AVAILABLE',
+      quantity: 1
+    },
+    {
+      shortname: 'EXJKLJKL',
+      stockDesc: 'NAME OF THE PARTS',
+      status: 'AVAILABLE',
+      quantity: 1
     },
     {
       shortname: 'EXJKLJKL',
@@ -53,7 +67,11 @@ const JobPartsList = (props) => {
                   <TableCell numeric>{part.stockDesc}</TableCell>
                   <TableCell numeric>{part.status}</TableCell>
                   <TableCell numeric>{part.quantity}</TableCell>
-                  <TableCell numeric>DELETE</TableCell>
+                  <TableCell numeric>
+                    <IconButton>
+                      <DeleteIcon />
+                    </IconButton>
+                  </TableCell>
                 </TableRow>
               )
             })

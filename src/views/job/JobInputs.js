@@ -12,7 +12,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import Button from '@material-ui/core/Button'
 import green from '@material-ui/core/colors/green'
 
-const styles = theme => ({
+const styles = () => ({
   greenButton: {
     color: 'white',
     backgroundColor: green[500],
@@ -35,14 +35,14 @@ const JobInputs = props => {
           style={{ marginBottom: 8 }}
         >
           <Grid container spacing={16} style={{ marginBottom: 8 }}>
-            <Grid item xs={3}>
+            <Grid item xs={4}>
               <TextField
                 disabled
                 fullWidth
-                value='X213156783'
+                value='35-209900-176148-23'
                 label='IMEI' />
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <TextField
                 disabled
                 fullWidth
@@ -51,23 +51,23 @@ const JobInputs = props => {
             </Grid>
           </Grid>
           <Grid container spacing={16} style={{ marginBottom: 8 }}>
-            <Grid item xs={2}>
+            <Grid item xs={4}>
               <TextField
                 disabled
                 fullWidth
-                value='SAMSUNG'
+                value='XIAOMI'
                 label='BRAND' />
             </Grid>
-            <Grid item xs={3}>
+            <Grid item xs={5}>
               <TextField
                 disabled
                 fullWidth
-                value='GALAXY NOTE 6'
+                value='HONGMI NOTE 99999'
                 label='MODEL' />
             </Grid>
           </Grid>
           <Grid container spacing={16} style={{ marginBottom: 8 }}>
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='storage'>Storage</InputLabel>
                 <Input
@@ -78,7 +78,7 @@ const JobInputs = props => {
                 />
               </FormControl>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <TextField
                 disabled
                 fullWidth

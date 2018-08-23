@@ -5,24 +5,22 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import Typography from '@material-ui/core/Typography'
+import FormControl from '@material-ui/core/FormControl'
+import Input from '@material-ui/core/Input'
+import InputLabel from '@material-ui/core/InputLabel'
+import InputAdornment from '@material-ui/core/InputAdornment'
 import Button from '@material-ui/core/Button'
-import purple from '@material-ui/core/colors/purple';
-import green from '@material-ui/core/colors/green';
+import green from '@material-ui/core/colors/green'
 
 const styles = theme => ({
   greenButton: {
     color: 'white',
     backgroundColor: green[500],
     '&:hover': {
-      backgroundColor: green[700],
-    },
+      backgroundColor: green[700]
+    }
   }
-});
+})
 
 const JobInputs = props => {
   const { classes } = props
@@ -71,12 +69,12 @@ const JobInputs = props => {
           <Grid container spacing={16} style={{ marginBottom: 8 }}>
             <Grid item xs={2}>
               <FormControl fullWidth>
-                <InputLabel htmlFor="storage">Storage</InputLabel>
+                <InputLabel htmlFor='storage'>Storage</InputLabel>
                 <Input
                   disabled
                   value='128'
-                  id="storage"
-                  endAdornment={<InputAdornment position="end">GB</InputAdornment>}
+                  id='storage'
+                  endAdornment={<InputAdornment position='end'>GB</InputAdornment>}
                 />
               </FormControl>
             </Grid>
@@ -114,7 +112,7 @@ const JobInputs = props => {
 }
 
 JobInputs.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+  classes: PropTypes.object.isRequired
+}
 
 export default withStyles(styles)(JobInputs)

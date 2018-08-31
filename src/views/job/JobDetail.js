@@ -44,15 +44,51 @@ const styles = theme => ({
 
 class JobDetail extends React.Component {
   state = {
-    open: false,
+    openDetailDiag: false,
+    openProbDiag: false,
+    openPartDiag: false
   };
 
-  handleOpen = () => {
-    this.setState({ open: true });
+  handleOpen = (section = 'detail') => {
+    switch (section) {
+      case 'detail':
+        this.setState({ openDetailDiag: true });
+        break
+
+      case 'prob':
+        this.setState({ openProbDiag: true });
+        break
+
+      case 'part':
+        this.setState({ openPartDiag: true });
+        break
+
+      default:
+        return
+    }
   };
 
-  handleClose = () => {
-    this.setState({ open: false });
+  updateState = () => {
+
+  }
+
+  handleClose = (section = 'detail') => {
+    switch (section) {
+      case 'detail':
+        this.setState({ openDetailDiag: false });
+        break
+
+      case 'prob':
+        this.setState({ openProbDiag: false });
+        break
+
+      case 'part':
+        this.setState({ openPartDiag: false });
+        break
+
+      default:
+        return
+    }
   };
 
 
@@ -152,7 +188,7 @@ class JobDetail extends React.Component {
         <JobEdit
           title='EDIT JOB'
           open={this.state.open}
-          handleClose={this.handleClose} />
+          handleClose={this.handleClose('detail')} />
       </div>
     )
   }

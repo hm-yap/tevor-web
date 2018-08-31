@@ -22,7 +22,7 @@ const JobProblemEdit = (props) => {
       <DialogTitle id='form-dialog-title'>{title}</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          To create a new job, fill in the form and click <em>save</em>
+          Fill in job problems and click <em>save</em>
         </DialogContentText>
         <TextField autoFocus label='BRAND' fullWidth required margin='dense' />
         <TextField label='MODEL' fullWidth required margin='dense' />

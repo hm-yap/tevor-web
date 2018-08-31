@@ -15,12 +15,12 @@ import {
 } from './MaterialIcons'
 
 class ListItemLink extends React.Component {
-  renderLink = itemProps => <Link to={this.props.to} {...itemProps} />
-
-  render() {
+  render () {
     const { icon, primary, secondary } = this.props
+    const renderLink = itemProps => <Link to={this.props.to} {...itemProps} />
+
     return (
-      <ListItem button component={this.renderLink}>
+      <ListItem button component={renderLink}>
         {icon && <ListItemIcon>{icon}</ListItemIcon>}
         <ListItemText inset primary={primary} secondary={secondary} />
       </ListItem>

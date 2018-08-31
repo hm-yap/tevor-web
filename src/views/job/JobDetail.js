@@ -14,6 +14,7 @@ import JobInputs from './JobInputs'
 import JobProblemList from './JobProblemList'
 import JobPartsList from './JobPartsList'
 import JobStatus from './JobStatus'
+import JobEdit from './JobEdit'
 // Material icons
 import {
   AddIcon,
@@ -41,100 +42,120 @@ const styles = theme => ({
   }
 })
 
-const JobDetail = (props) => {
-  const { match: { params: { jobid } }, classes } = props
+class JobDetail extends React.Component {
+  state = {
+    open: false,
+  };
 
-  return (
-    <Grid container spacing={16}>
-      <Grid item xs={12}>
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+
+  render() {
+    const { match: { params: { jobid } }, classes } = this.props
+
+    return (
+      <div>
         <Grid container spacing={16}>
-          <Grid item xs={8}>
-            <Card raised className={classes.top}>
-              <CardHeader
-                title={jobid}
-                classes={{
-                  root: classes.cardHeader,
-                  title: classes.whiteFont,
-                  action: classes.action
-                }}
-                action={
-                  <Button
-                    component={Link}
-                    variant='contained'
-                    to={`/job/{jobid}/edit`}
-                    color='primary'>
-                    <EditIcon className={classes.leftIcon} />
-                    EDIT JOB
+          <Grid item xs={12}>
+            <Grid container spacing={16}>
+              <Grid item xs={8}>
+                <Card raised className={classes.top}>
+                  <CardHeader
+                    title={jobid}
+                    classes={{
+                      root: classes.cardHeader,
+                      title: classes.whiteFont,
+                      action: classes.action
+                    }}
+                    action={
+                      <Button
+                        onClick={this.handleOpen}
+                        variant='contained'
+                        color='primary'>
+                        <EditIcon className={classes.leftIcon} />
+                        EDIT JOB
+                    </Button>
+                    } />
+                  <CardContent>
+                    <JobInputs />
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={4}>
+                <Card raised className={classes.top}>
+                  <CardContent>
+                    <JobStatus />
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={12}>
+            <Grid container spacing={16}>
+              <Grid item xs={4}>
+                <Card raised className={classes.bottom}>
+                  <CardHeader
+                    title='PHONE PROBLEMS'
+                    classes={{
+                      root: classes.cardHeader,
+                      title: classes.whiteFont,
+                      action: classes.action
+                    }}
+                    action={
+                      <Button
+                        component={Link}
+                        to={`/job/{jobid}/edit`}
+                        variant='contained'
+                        color='primary'>
+                        <AddIcon className={classes.leftIcon} />
+                        ADD
                   </Button>
-                } />
-              <CardContent>
-                <JobInputs />
-              </CardContent>
-            </Card>
+                    } />
+                  <CardContent>
+                    <JobProblemList />
+                  </CardContent>
+                </Card>
+              </Grid>
+              <Grid item xs={8}>
+                <Card raised className={classes.bottom}>
+                  <CardHeader
+                    title='PARTS'
+                    classes={{
+                      root: classes.cardHeader,
+                      title: classes.whiteFont,
+                      action: classes.action
+                    }}
+                    action={
+                      <Button
+                        component={Link}
+                        to={`/job/{jobid}/edit`}
+                        variant='contained'
+                        color='primary'>
+                        <AddIcon className={classes.leftIcon} />
+                        ADD PARTS
+                    </Button>
+                    } />
+                  <CardContent>
+                    <JobPartsList />
+                  </CardContent>
+                </Card>
+              </Grid>
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Card raised className={classes.top}>
-              <CardContent>
-                <JobStatus />
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid item xs={12}>
-        <Grid container spacing={16}>
-          <Grid item xs={4}>
-            <Card raised className={classes.bottom}>
-              <CardHeader
-                title='PHONE PROBLEMS'
-                classes={{
-                  root: classes.cardHeader,
-                  title: classes.whiteFont,
-                  action: classes.action
-                }}
-                action={
-                  <Button
-                    component={Link}
-                    to={`/job/{jobid}/edit`}
-                    variant='contained'
-                    color='primary'>
-                    <AddIcon className={classes.leftIcon} />
-                    ADD
-                  </Button>
-                } />
-              <CardContent>
-                <JobProblemList />
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={8}>
-            <Card raised className={classes.bottom}>
-              <CardHeader
-                title='PARTS'
-                classes={{
-                  root: classes.cardHeader,
-                  title: classes.whiteFont,
-                  action: classes.action
-                }}
-                action={
-                  <Button
-                    component={Link}
-                    to={`/job/{jobid}/edit`}
-                    variant='contained'
-                    color='primary'>
-                    <AddIcon className={classes.leftIcon} />
-                    ADD PARTS
-                  </Button>
-                } />
-              <CardContent>
-                <JobPartsList />
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Grid >
-  )
+        </Grid >
+        <JobEdit
+          title='EDIT JOB'
+          open={this.state.open}
+          handleClose={this.handleClose} />
+      </div>
+    )
+  }
 }
 
 JobDetail.propTypes = {

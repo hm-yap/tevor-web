@@ -10,7 +10,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContentText from '@material-ui/core/DialogContentText'
 
-const JobEdit = (props) => {
+const JobProblemEdit = (props) => {
   const { open, handleClose, title = 'EDIT JOB' } = props
 
   return (
@@ -43,9 +43,9 @@ const JobEdit = (props) => {
   )
 }
 
-JobEdit.propTypes = {
+JobProblemEdit.propTypes = {
   open: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired
 }
 
-export default JobEdit
+export default JobProblemEdit

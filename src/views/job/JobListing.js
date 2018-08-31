@@ -84,7 +84,7 @@ const JobListing = (props) => {
           {
             emptyRows > 0 && (
               <TableRow style={{ height: 48 * emptyRows }}>
-                <TableCell colSpan={7} />
+                <TableCell colSpan={8} />
               </TableRow>
             )
           }

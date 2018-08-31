@@ -8,12 +8,12 @@ import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogContentText from '@material-ui/core/DialogContentText';
+import TextField from '@material-ui/core/TextField'
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import DialogContentText from '@material-ui/core/DialogContentText'
 // Material icons
 import {
   AddIcon
@@ -21,6 +21,7 @@ import {
 // Components
 import JobCards from './JobCards'
 import JobListing from './JobListing'
+import JobEdit from './JobEdit'
 
 const styles = theme => ({
   root: {
@@ -94,32 +95,10 @@ class Job extends React.Component {
             </CardContent>
           </Card>
         </div>
-        <Dialog
+        <JobEdit
+          title='NEW JOB'
           open={this.state.open}
-          onClose={this.handleClose}
-          aria-labelledby='form-dialog-title'
-        >
-          <DialogTitle id='form-dialog-title'>NEW JOB</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              To create a new job, fill in the form and click <em>save</em>
-            </DialogContentText>
-            <TextField autoFocus label='BRAND' fullWidth required margin='dense' />
-            <TextField label='MODEL' fullWidth required margin='dense' />
-            <TextField label='COLOR' fullWidth required margin='dense' />
-            <TextField label='STORAGE (GB)' fullWidth required margin='dense' type='number' />
-            <TextField label='IMEI' fullWidth helperText='IMEI of the phone (optional)' margin='dense' />
-            <TextField label='JOBNO' fullWidth fullWidth helperText='Jobno from customer (optional)' margin='dense' />
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleClose} color='secondary'>
-              Cancel
-            </Button>
-            <Button onClick={this.handleClose} color='primary'>
-              Save
-            </Button>
-          </DialogActions>
-        </Dialog>
+          handleClose={this.handleClose} />
       </div>
     )
   }

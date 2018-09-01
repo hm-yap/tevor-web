@@ -41,7 +41,7 @@ const Dashboard = (props) => {
   return (
     <div className={classes.root}>
       <Grid container wrap='nowrap' spacing={16}>
-        <Grid item xs={2}>
+        <Grid item xs={12}>
           <Link to={'/job'} className={classes.link}>
             <Card className={classes.card}>
               <CardContent>
@@ -53,7 +53,7 @@ const Dashboard = (props) => {
             </Card>
           </Link>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12}>
           <Link to={'/billing'} className={classes.link}>
             <Card className={classes.card}>
               <CardContent>
@@ -65,7 +65,7 @@ const Dashboard = (props) => {
             </Card>
           </Link>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={12}>
           <Link to={'/stock'} className={classes.link}>
             <Card className={classes.card}>
               <CardContent>

@@ -49,48 +49,29 @@ class JobDetail extends React.Component {
     openPartDiag: false
   };
 
-  handleOpen = (section = 'detail') => {
-    switch (section) {
-      case 'detail':
-        this.setState({ openDetailDiag: true });
-        break
-
-      case 'prob':
-        this.setState({ openProbDiag: true });
-        break
-
-      case 'part':
-        this.setState({ openPartDiag: true });
-        break
-
-      default:
-        return
-    }
-  };
-
-  updateState = () => {
-
+  openDetail = () => {
+    this.setState({ openDetailDiag: true })
   }
 
-  handleClose = (section = 'detail') => {
-    switch (section) {
-      case 'detail':
-        this.setState({ openDetailDiag: false });
-        break
+  openProb = () => {
+    this.setState({ openProbDiag: true })
+  }
 
-      case 'prob':
-        this.setState({ openProbDiag: false });
-        break
+  openPart = () => {
+    this.setState({ openPartDiag: true })
+  }
 
-      case 'part':
-        this.setState({ openPartDiag: false });
-        break
+  closeDetail = () => {
+    this.setState({ openDetailDiag: false })
+  }
 
-      default:
-        return
-    }
-  };
+  closeProb = () => {
+    this.setState({ openProbDiag: false })
+  }
 
+  closePart = () => {
+    this.setState({ openPartDiag: false })
+  }
 
   render() {
     const { match: { params: { jobid } }, classes } = this.props
@@ -111,7 +92,7 @@ class JobDetail extends React.Component {
                     }}
                     action={
                       <Button
-                        onClick={this.handleOpen}
+                        onClick={this.openDetail}
                         variant='contained'
                         color='primary'>
                         <EditIcon className={classes.leftIcon} />
@@ -145,8 +126,7 @@ class JobDetail extends React.Component {
                     }}
                     action={
                       <Button
-                        component={Link}
-                        to={`/job/{jobid}/edit`}
+                        onClick={this.openProb}
                         variant='contained'
                         color='primary'>
                         <AddIcon className={classes.leftIcon} />
@@ -169,8 +149,7 @@ class JobDetail extends React.Component {
                     }}
                     action={
                       <Button
-                        component={Link}
-                        to={`/job/{jobid}/edit`}
+                        onClick={this.openPart}
                         variant='contained'
                         color='primary'>
                         <AddIcon className={classes.leftIcon} />
@@ -187,8 +166,8 @@ class JobDetail extends React.Component {
         </Grid >
         <JobEdit
           title='EDIT JOB'
-          open={this.state.open}
-          handleClose={this.handleClose('detail')} />
+          open={this.state.openDetailDiag}
+          handleClose={this.closeDetail} />
       </div>
     )
   }

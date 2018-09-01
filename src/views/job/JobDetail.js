@@ -15,6 +15,7 @@ import JobProblemList from './JobProblemList'
 import JobPartsList from './JobPartsList'
 import JobStatus from './JobStatus'
 import JobEdit from './JobEdit'
+import JobProblemEdit from './JobProblemEdit'
 // Material icons
 import {
   AddIcon,
@@ -168,6 +169,10 @@ class JobDetail extends React.Component {
           title='EDIT JOB'
           open={this.state.openDetailDiag}
           handleClose={this.closeDetail} />
+        <JobProblemEdit
+          title='ADD PROBLEM'
+          open={this.state.openProbDiag}
+          handleClose={this.closeProb} />
       </div>
     )
   }

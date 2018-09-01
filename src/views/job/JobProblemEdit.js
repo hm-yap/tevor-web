@@ -11,7 +11,7 @@ import DialogTitle from '@material-ui/core/DialogTitle'
 import DialogContentText from '@material-ui/core/DialogContentText'
 
 const JobProblemEdit = (props) => {
-  const { open, handleClose, title = 'EDIT JOB' } = props
+  const { open, handleClose, title = 'EDIT PROBLEM' } = props
 
   return (
     <Dialog
@@ -24,12 +24,7 @@ const JobProblemEdit = (props) => {
         <DialogContentText>
           Fill in job problems and click <em>save</em>
         </DialogContentText>
-        <TextField autoFocus label='BRAND' fullWidth required margin='dense' />
-        <TextField label='MODEL' fullWidth required margin='dense' />
-        <TextField label='COLOR' fullWidth required margin='dense' />
-        <TextField label='STORAGE (GB)' fullWidth required margin='dense' type='number' />
-        <TextField label='IMEI' fullWidth helperText='IMEI of the phone (optional)' margin='dense' />
-        <TextField label='JOBNO' fullWidth helperText='Jobno from customer (optional)' margin='dense' />
+        <TextField style={{ width: 400 }} autoFocus label='PROBLEM' fullWidth required margin='dense' />
       </DialogContent>
       <DialogActions>
         <Button onClick={handleClose} color='secondary'>

@@ -31,18 +31,6 @@ const JobPartsList = (props) => {
       stockDesc: 'NAME OF THE PARTS',
       status: 'AVAILABLE',
       quantity: 1
-    },
-    {
-      shortname: 'EXJKLJKL',
-      stockDesc: 'NAME OF THE PARTS',
-      status: 'AVAILABLE',
-      quantity: 1
-    },
-    {
-      shortname: 'EXJKLJKL',
-      stockDesc: 'NAME OF THE PARTS',
-      status: 'AVAILABLE',
-      quantity: 1
     }
   ]
 

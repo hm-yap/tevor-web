@@ -1,19 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 // Material core
-import { withStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 
-const styles = theme => {
-
-}
-
 const JobListing = (props) => {
-  const { classes, history } = props
+  const { history } = props
   const emptyRows = 4
 
   const data = [
@@ -95,7 +90,7 @@ const JobListing = (props) => {
 }
 
 JobListing.propTypes = {
-  classes: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(JobListing)
+export default JobListing

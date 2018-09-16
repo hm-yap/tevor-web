@@ -19,6 +19,9 @@ const styles = () => ({
     '&:hover': {
       backgroundColor: green[700]
     }
+  },
+  gridMargin: {
+    marginBottom: 8
   }
 })
 
@@ -28,13 +31,10 @@ const JobInputs = props => {
   return (
     <div>
       <Grid container>
-        <Grid
-          item
-          xs={10}
-          spacing={16}
-          style={{ marginBottom: 8 }}
+        <Grid item xs={10}
+          className={classes.gridMargin}
         >
-          <Grid container spacing={16} style={{ marginBottom: 8 }}>
+          <Grid container spacing={16} className={classes.gridMargin}>
             <Grid item xs={4}>
               <TextField
                 disabled
@@ -50,7 +50,7 @@ const JobInputs = props => {
                 label='JOBNO' />
             </Grid>
           </Grid>
-          <Grid container spacing={16} style={{ marginBottom: 8 }}>
+          <Grid container spacing={16} className={classes.gridMargin}>
             <Grid item xs={4}>
               <TextField
                 disabled
@@ -66,7 +66,7 @@ const JobInputs = props => {
                 label='MODEL' />
             </Grid>
           </Grid>
-          <Grid container spacing={16} style={{ marginBottom: 8 }}>
+          <Grid container spacing={16} className={classes.gridMargin}>
             <Grid item xs={3}>
               <FormControl fullWidth>
                 <InputLabel htmlFor='storage'>Storage</InputLabel>

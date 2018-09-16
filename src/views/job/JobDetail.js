@@ -1,7 +1,6 @@
 // Job read only container
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 // Material core
 import { withStyles } from '@material-ui/core/styles'
 import Card from '@material-ui/core/Card'
@@ -16,6 +15,7 @@ import JobPartsList from './JobPartsList'
 import JobStatus from './JobStatus'
 import JobEdit from './JobEdit'
 import JobProblemEdit from './JobProblemEdit'
+import JobPartAdd from './JobPartAdd'
 // Material icons
 import {
   AddIcon,
@@ -173,6 +173,10 @@ class JobDetail extends React.Component {
           title='ADD PROBLEM'
           open={this.state.openProbDiag}
           handleClose={this.closeProb} />
+        <JobPartAdd
+          title='ADD PARTS'
+          open={this.state.openPartDiag}
+          handleClose={this.closePart} />
       </div>
     )
   }

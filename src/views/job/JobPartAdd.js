@@ -99,6 +99,14 @@ const SearchResultList = (props) => {
     {
       stockid: 'TESTID3',
       stockDesc: 'SOME REALLLY LONG PART NAME 3'
+    },
+    {
+      stockid: 'TESTID4',
+      stockDesc: 'SOME REALLLY LONG PART NAME 4 WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO'
+    },
+    {
+      stockid: 'TESTID5',
+      stockDesc: 'SOME REALLLY LONG PART NAME 5'
     }
   ]
 

@@ -1,6 +1,11 @@
 // Container for Job listing and statuses
 import React from 'react'
 import PropTypes from 'prop-types'
+// Redux binding
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+// Job listing screen actions
+import { getActiveJobs } from '../../actions/jobListing'
 // Material core
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
@@ -44,6 +49,10 @@ const styles = theme => ({
 })
 
 class Job extends React.Component {
+  componentDidMount() {
+    this.props.getActiveJobs()
+  }
+
   state = {
     open: false,
   };
@@ -98,8 +107,16 @@ class Job extends React.Component {
   }
 }
 
+const mapStateToProps = state => ({
+  jobLists: state.job.jobLists
+})
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getActiveJobs
+}, dispatch)
+
 Job.propTypes = {
   classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Job)
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Job))

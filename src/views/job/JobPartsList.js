@@ -40,9 +40,9 @@ const JobPartsList = (props) => {
         <TableHead>
           <TableRow>
             <TableCell>STOCK CODE</TableCell>
-            <TableCell numeric>DESCRIPTION</TableCell>
-            <TableCell numeric>STATUS</TableCell>
-            <TableCell numeric>QUANTITY</TableCell>
+            <TableCell align='left'>DESCRIPTION</TableCell>
+            <TableCell align='left'>STATUS</TableCell>
+            <TableCell align='right'>QUANTITY</TableCell>
             <TableCell />
           </TableRow>
         </TableHead>
@@ -52,10 +52,10 @@ const JobPartsList = (props) => {
               return (
                 <TableRow hover key={part.shortname} >
                   <TableCell>{part.shortname}</TableCell>
-                  <TableCell numeric>{part.stockDesc}</TableCell>
-                  <TableCell numeric>{part.status}</TableCell>
-                  <TableCell numeric>{part.quantity}</TableCell>
-                  <TableCell numeric>
+                  <TableCell align='left'>{part.stockDesc}</TableCell>
+                  <TableCell align='left'>{part.status}</TableCell>
+                  <TableCell align='right'>{part.quantity}</TableCell>
+                  <TableCell align='right'>
                     <IconButton>
                       <DeleteIcon />
                     </IconButton>

@@ -8,8 +8,9 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 
 const JobListing = (props) => {
-  const { history } = props
+  const { history, jobLists } = props
   const emptyRows = 4
+  console.log('jobLists', jobLists)
 
   const data = [
     {
@@ -50,28 +51,28 @@ const JobListing = (props) => {
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell numeric>CUSTOMER</TableCell>
-            <TableCell numeric>IMEI</TableCell>
-            <TableCell numeric>JOBNO</TableCell>
-            <TableCell numeric>BRAND</TableCell>
-            <TableCell numeric>MODEL</TableCell>
-            <TableCell numeric>PRIORITY</TableCell>
-            <TableCell numeric>STATUS</TableCell>
+            <TableCell>CUSTOMER</TableCell>
+            <TableCell align='right'>IMEI</TableCell>
+            <TableCell align='right'>JOBNO</TableCell>
+            <TableCell>BRAND</TableCell>
+            <TableCell>MODEL</TableCell>
+            <TableCell align='center'>PRIORITY</TableCell>
+            <TableCell align='center'>STATUS</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {
-            data.map(job => {
+            props.jobLists.map(job => {
               return (
-                <TableRow hover key={job.id} onClick={() => history.push(`/job/${job.id}`)}>
-                  <TableCell>{job.id}</TableCell>
-                  <TableCell numeric>{job.customer}</TableCell>
-                  <TableCell numeric>{job.imei}</TableCell>
-                  <TableCell numeric>{job.jobno}</TableCell>
-                  <TableCell numeric>{job.brand}</TableCell>
-                  <TableCell numeric>{job.model}</TableCell>
-                  <TableCell numeric>{job.priority}</TableCell>
-                  <TableCell numeric>{job.status}</TableCell>
+                <TableRow hover key={job.jobid} onClick={() => history.push(`/job/${job.jobid}`)}>
+                  <TableCell>{job.jobid}</TableCell>
+                  <TableCell>{job.client}</TableCell>
+                  <TableCell align='right'>{job.imei}</TableCell>
+                  <TableCell align='right'>{job.jobno}</TableCell>
+                  <TableCell>{job.brand}</TableCell>
+                  <TableCell>{job.model}</TableCell>
+                  <TableCell align='center'>{job.priority}</TableCell>
+                  <TableCell align='center'>{job.status}</TableCell>
                 </TableRow>
               )
             })
@@ -90,7 +91,8 @@ const JobListing = (props) => {
 }
 
 JobListing.propTypes = {
-  history: PropTypes.object.isRequired
+  history: PropTypes.object.isRequired,
+  jobLists: PropTypes.array.isRequired
 }
 
 export default JobListing
